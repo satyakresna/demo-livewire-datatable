@@ -2,6 +2,8 @@
 
 Easy and simple demo datatable with Livewire. 👍
 
+![Demo Livewire Datatable gif](demo-livewire-datatable.gif)
+
 ## Features
 
 Filter, sort, refresh, and delete data in datatable. 🙂
