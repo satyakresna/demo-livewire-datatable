@@ -4,7 +4,7 @@ Easy and simple demo datatable with Livewire. 👍
 
 ## Features
 
-Filter, sort and refresh datatable. 🙂
+Filter, sort, refresh, and delete data in datatable. 🙂
 
 ## Requirement
 
