@@ -16,7 +16,7 @@ class UsersTable extends Component
     public $search = '';
     public $searchUserType = '';
 
-    protected $listeners = ['refreshUsersTable'];
+    protected $listeners = ['refreshUsersTable', 'delete', 'deleteOk', 'deleteError'];
 
     public function sortBy($field)
     {
@@ -47,6 +47,48 @@ class UsersTable extends Component
         $this->searchUserType = '';
         $this->sortField = 'name';
         $this->sortAsc = true;
+    }
+
+    public function deleteConfirm($id, $name)
+    {
+        $this->dispatchBrowserEvent('swal:confirm', [
+            'title' => 'Peringatan!',
+            'message' => "Anda yakin akan menghapus user {$name}?",
+            'id' => $id,
+            'name' => $name
+        ]);
+    }
+
+    public function delete($id, $name)
+    {
+        // TODO: math random, not actual delete a user
+        // then `emit` to another method
+        $rand = mt_rand(0, 1);
+        if (!empty($rand)) {
+            $this->emit('deleteOk', [
+                'name' => $name
+            ]);
+        } else {
+            $this->emit('deleteError', [
+                'name' => $name
+            ]);
+        }
+    }
+
+    public function deleteOk($data)
+    {
+        $this->dispatchBrowserEvent('swal:ok', [
+            'title' => 'Berhasil!',
+            'message' => "User {$data['name']} berhasil dihapus!"
+        ]);
+    }
+
+    public function deleteError($data)
+    {
+        $this->dispatchBrowserEvent('swal:error', [
+            'title' => 'Gagal!',
+            'message' => "User {$data['name']} gagal dihapus!"
+        ]);
     }
 
     public function render()
