@@ -20,7 +20,7 @@ Filter, sort, refresh, and delete data in datatable. 🙂
 
 - Clone this demo repository
 - Run `cp .env.example .env` to create `.env` file by duplicate `.env.example`
-- Create database with name `demo_livewire_datatable`
+- Create database.sqlite with command `touch database/database.sqlite` from root directory
 - Run `composer install`
 - Run `php artisan key:generate`
 - Run `php artisan migrate`
