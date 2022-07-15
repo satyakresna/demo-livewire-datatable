@@ -8,13 +8,12 @@ Easy and simple demo datatable with Livewire. 👍
 
 Filter, sort, refresh, and delete data in datatable. 🙂
 
-## Requirement
+## Requirements
 
-- PHP version 7.4.x
-- MySQL version 5.7
+- PHP version 8.1.x
+- Node version >= 16.x
 - Composer version 2.x
-- Node version >= 14.x
-- Laravel version 8.x
+- SQLite
 
 ## How to run
 
